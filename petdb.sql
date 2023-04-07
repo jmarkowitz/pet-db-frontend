@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS OwnerEvents
     CONSTRAINT fk_eventID
         FOREIGN KEY (event_id) REFERENCES Event (event_id)
             ON UPDATE CASCADE ON DELETE restrict,
-    CONSTRAINT fk_userID
+    CONSTRAINT fk_userID1
         FOREIGN KEY (user_id) REFERENCES PetOwner (user_id)
 );
 
@@ -181,37 +181,42 @@ CREATE TABLE IF NOT EXISTS BorrowerReview
 
 );
 
+
+
 CREATE TABLE IF NOT EXISTS BorrowerPetPreferences
 (
     species_id  int,
     type_id     int,
     habit_id    int,
-    borrower_id int PRIMARY KEY,
-    CONSTRAINT fk_habitID
-        FOREIGN KEY (habit_id) REFERENCES Habits (habit_id)
-            ON UPDATE CASCADE ON DELETE restrict,
+    borrower_id int,
+    PRIMARY KEY(habit_id, borrower_id),
     CONSTRAINT fk_borrowerid
         FOREIGN KEY (borrower_id) REFERENCES Borrower (borrower_id)
 );
 
+
 CREATE TABLE IF NOT EXISTS Habits
 (
     habit_id    int PRIMARY KEY ,
-    habit_num   int NOT NULL,
-    description varchar(1000)
+    borrower_id int UNIQUE,
+    description text,
+    CONSTRAINT fk_habbit_id
+        FOREIGN KEY (habit_id) REFERENCES BorrowerPetPreferences (habit_id),
+    CONSTRAINT fk_borrower_id
+        FOREIGN KEY (borrower_id) REFERENCES BorrowerPetPreferences (borrower_id)
 );
+
 
 CREATE TABLE IF NOT EXISTS BorrowerBorrow
 (
     borrower_id int,
     pet_id      int,
     PRIMARY KEY (borrower_id, pet_id),
-    CONSTRAINT fk_borrowerID
+    CONSTRAINT fk_borrowerID_1
         FOREIGN KEY (borrower_id) REFERENCES Borrower (borrower_id),
-    CONSTRAINT fk_petid
+    CONSTRAINT fk_petid_2
         FOREIGN KEY (pet_id) REFERENCES Pet (pet_id)
 );
-
 
 
 
