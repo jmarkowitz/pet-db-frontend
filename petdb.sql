@@ -1,3 +1,6 @@
+
+
+
 CREATE DATABASE IF NOT EXISTS petdb;
 USE petdb;
 
@@ -163,7 +166,7 @@ CREATE TABLE IF NOT EXISTS Borrower
     first_name   varchar(50) NOT NULL,
     last_name    varchar(50) NOT NULL,
     availability varchar(50),
-    occupation   varchar(50),
+    occupation   varchar(150),
     age          int,
     description  text,
     city         varchar(50),
@@ -172,6 +175,7 @@ CREATE TABLE IF NOT EXISTS Borrower
     borrower_id  int PRIMARY KEY,
     review_id   INTEGER
 );
+
 
 CREATE TABLE IF NOT EXISTS BorrowerReview
 (
@@ -218,3 +222,30 @@ CREATE TABLE IF NOT EXISTS BorrowerBorrow
     CONSTRAINT fk_petid_2
         FOREIGN KEY (pet_id) REFERENCES Pet (pet_id)
 );
+
+
+
+
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Franciska','Revens','consequat','sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede',2,'turpis adipiscing lorem vitae mattis nibh ligula nec sem duis','Denver','Colorado',80204,57,32);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Margette','Alves','at','nisl venenatis lacinia aenean sit amet justo morbi ut odio',3,'metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris','Monticello','Minnesota',55585,76,85);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Guthry','Bummfrey','mattis','dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet',3,'morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed','Palm Bay','Florida',32909,77,31);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Nicky','Birkwood','nibh','sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui',2,'dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque','Frankfort','Kentucky',40618,32,81);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Davida','Hannis','morbi','sed interdum venenatis turpis enim blandit mi in porttitor pede justo',2,'condimentum neque sapien placerat ante nulla justo aliquam quis turpis','San Diego','California',92121,79,26);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Antonino','Danielski','diam','venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat',3,'lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu','Toledo','Ohio',43635,20,70);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Benton','Gwin','consequat','tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus',3,'nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla','Miami','Florida',33261,65,3);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Vinnie','Huetson','sed','etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non',1,'phasellus in felis donec semper sapien a libero nam dui proin leo odio','San Francisco','California',94142,50,79);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Kennett','Tomaszek','proin','ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit',3,'nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit','Newark','New Jersey',07195,10,38);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Ozzie','Mayo','velit','primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio',1,'varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci','San Francisco','California',94142,11,32);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Jessica','Ashwood','cubilia','urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis',1,'turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam','Portland','Oregon',97296,38,41);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Evanne','Node','nisi','non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc',2,'integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus','Providence','Rhode Island',02912,67,11);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Cello','Tewelson','sem','sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer',2,'ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis','Fort Lauderdale','Florida',33330,18,44);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Philipa','Brewood','rutrum','lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa',1,'donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id','Pasadena','California',91117,95,99);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Harmonia','Dabel','bibendum','fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue',1,'pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra','Washington','District of Columbia',20036,52,16);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Ainslie','Lynthal','pharetra','rutrum neque aenean auctor gravida sem praesent id massa id',1,'sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus','New York City','New York',10009,2,23);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Dorita','Quantick','potenti','vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim',2,'id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque','Waterbury','Connecticut',06726,40,47);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Karly','Comusso','tempor','posuere cubilia curae nulla dapibus dolor vel est donec odio justo',3,'consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus','Fairfax','Virginia',22036,39,87);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Obediah','Wegenen','pellentesque','lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum',1,'a libero nam dui proin leo odio porttitor id consequat in consequat ut','Duluth','Georgia',30096,9,14);
+INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,borrower_id,review_id) VALUES ('Yetta','Fetterplace','in','nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec',1,'pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet','San Jose','California',95194,36,66);
+
+SELECT *
+FROM Borrower;
