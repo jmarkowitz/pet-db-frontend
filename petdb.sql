@@ -9,6 +9,19 @@ CREATE TABLE IF NOT EXISTS PetServiceProviders
     zip     INTEGER NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS PetOwner
+(
+    first_name  varchar(50) NOT NULL,
+    last_name   varchar(50) NOT NULL,
+    age         int,
+    city        varchar(50),
+    state       varchar(50),
+    zip         int,
+    occupation  varchar(50),
+    description text,
+    user_id     int PRIMARY KEY
+);
+
 CREATE TABLE IF NOT EXISTS Experience
 (
     psp_id        INTEGER NOT NULL,
@@ -96,18 +109,6 @@ CREATE TABLE IF NOT EXISTS PetBreed
             ON UPDATE CASCADE ON DELETE restrict
 );
 
-CREATE TABLE IF NOT EXISTS PetOwner
-(
-    first_name  varchar(50) NOT NULL,
-    last_name   varchar(50) NOT NULL,
-    age         int,
-    city        varchar(50),
-    state       varchar(50),
-    zip         int,
-    occupation  varchar(50),
-    description text,
-    user_id     int PRIMARY KEY
-);
 
 CREATE TABLE IF NOT EXISTS OwnerFriends
 (
@@ -150,7 +151,9 @@ CREATE TABLE IF NOT EXISTS OwnerEvents
     event_id int,
     CONSTRAINT fk_eventID
         FOREIGN KEY (event_id) REFERENCES Event (event_id)
-            ON UPDATE CASCADE ON DELETE restrict
+            ON UPDATE CASCADE ON DELETE restrict,
+    CONSTRAINT fk_userID
+        FOREIGN KEY (user_id) REFERENCES PetOwner (user_id)
 );
 
 CREATE TABLE IF NOT EXISTS Borrower
@@ -186,7 +189,9 @@ CREATE TABLE IF NOT EXISTS BorrowerPetPreferences
     borrower_id int PRIMARY KEY,
     CONSTRAINT fk_habitID
         FOREIGN KEY (habit_id) REFERENCES Habits (habit_id)
-            ON UPDATE CASCADE ON DELETE restrict
+            ON UPDATE CASCADE ON DELETE restrict,
+    CONSTRAINT fk_borrowerid
+        FOREIGN KEY (borrower_id) REFERENCES Borrower (borrower_id)
 );
 
 CREATE TABLE IF NOT EXISTS Habits
@@ -198,10 +203,14 @@ CREATE TABLE IF NOT EXISTS Habits
 
 CREATE TABLE IF NOT EXISTS BorrowerBorrow
 (
-    borrower_id int PRIMARY KEY,
-    pet_id      int PRIMARY KEY
+    borrower_id int,
+    pet_id      int,
+    PRIMARY KEY (borrower_id, pet_id),
+    CONSTRAINT fk_borrowerID
+        FOREIGN KEY (borrower_id) REFERENCES Borrower (borrower_id),
+    CONSTRAINT fk_petid
+        FOREIGN KEY (pet_id) REFERENCES Pet (pet_id)
 );
-
 
 
 
