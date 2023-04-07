@@ -63,6 +63,13 @@ CREATE TABLE IF NOT EXISTS Service
             ON UPDATE CASCADE ON DELETE restrict
 );
 
+
+CREATE TABLE IF NOT EXISTS PetSpecies
+(
+    species_id   INTEGER PRIMARY KEY,
+    species_name varchar(50) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS PreferredPetSpecies
 (
     service_id    INTEGER NOT NULL,
@@ -78,6 +85,7 @@ CREATE TABLE IF NOT EXISTS PreferredPetSpecies
             ON UPDATE CASCADE ON DELETE restrict
 );
 
+
 CREATE TABLE IF NOT EXISTS Pet
 (
     color                  varchar(50) NOT NULL,
@@ -91,12 +99,6 @@ CREATE TABLE IF NOT EXISTS Pet
     CONSTRAINT fk_pet_speciesID
         FOREIGN KEY (species_id) REFERENCES PetSpecies (species_id)
             ON UPDATE CASCADE ON DELETE restrict
-);
-
-CREATE TABLE IF NOT EXISTS PetSpecies
-(
-    species_id   INTEGER PRIMARY KEY,
-    species_name varchar(50) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS PetBreed
@@ -168,17 +170,16 @@ CREATE TABLE IF NOT EXISTS Borrower
     state        varchar(50),
     zip          int,
     borrower_id  int PRIMARY KEY,
-    review_id   INTEGER,
-    CONSTRAINT fk_review
-        FOREIGN KEY (review_id) REFERENCES BorrowerReview (review_id)
+    review_id   INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS BorrowerReview
 (
     review_text varchar(100),
     pet_id      int,
-    review_id INTEGER PRIMARY KEY
-
+    borrower_id INTEGER PRIMARY KEY,
+    CONSTRAINT fk_review
+        FOREIGN KEY (borrower_id) REFERENCES Borrower (borrower_id)
 );
 
 
@@ -217,6 +218,3 @@ CREATE TABLE IF NOT EXISTS BorrowerBorrow
     CONSTRAINT fk_petid_2
         FOREIGN KEY (pet_id) REFERENCES Pet (pet_id)
 );
-
-
-
