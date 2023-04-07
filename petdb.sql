@@ -249,3 +249,26 @@ INSERT INTO Borrower(first_name,last_name,availability,occupation,age,descriptio
 
 SELECT *
 FROM Borrower;
+
+#Pet provider
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (8,'Atlanta','Georgia',30311);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (83,'Berkeley','California',94705);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (56,'Chicago','Illinois',60609);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (98,'Kansas City','Missouri',64160);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (32,'Lincoln','Nebraska',68531);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (22,'Cincinnati','Ohio',45218);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (39,'Glendale','Arizona',85305);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (82,'Bonita Springs','Florida',34135);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (48,'Panama City','Florida',32412);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (86,'Philadelphia','Pennsylvania',19115);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (44,'Irvine','California',92619);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (38,'Cincinnati','Ohio',45208);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (21,'Rochester','New York',14639);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (72,'New York City','New York',10110);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (30,'Pittsburgh','Pennsylvania',15240);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (63,'Charlotte','North Carolina',28235);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (49,'Tulsa','Oklahoma',74126);
+INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (29,'Portsmouth','Virginia',23705);
+
+SELECT *
+FROM PetServiceProviders;
