@@ -272,3 +272,22 @@ INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (29,'Portsmouth',
 
 SELECT *
 FROM PetServiceProviders;
+
+
+
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Merrily','Aylen',48,'Greensboro','North Carolina',27409,'rutrum neque aenean','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.',8);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Rob','Bolter',48,'Las Cruces','New Mexico',88006,'maecenas tristique est et tempus','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',61);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Charity','Rive',44,'Des Moines','Iowa',50335,'at velit','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.',51);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Margarette','Stores',64,'Charlottesville','Virginia',22903,'in sapien','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.',76);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Stanwood','Ashpital',71,'Clearwater','Florida',34620,'velit id pretium iaculis diam','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.',67);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Harwilll','McKenny',46,'New York City','New York',10150,'laoreet ut','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.',63);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Vivie','Borges',21,'Brockton','Massachusetts',02405,'in blandit ultrices enim lorem','In congue. Etiam justo. Etiam pretium iaculis justo.',20);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Gail','Slewcock',53,'Toledo','Ohio',43666,'diam cras pellentesque','Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',46);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Loise','Egle',63,'Cape Coral','Florida',33915,'amet consectetuer','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.',86);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Quintus','McGaugan',87,'Longview','Texas',75605,'nulla suspendisse','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',70);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Bethanne','Nowell',27,'Henderson','Nevada',89012,'maecenas tristique est et tempus','Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.',58);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Raddy','Lindores',90,'Fort Lauderdale','Florida',33330,'morbi vestibulum velit id','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.',88);
+INSERT INTO PetOwner(first_name,last_name,age,city,state,zip,occupation,description,user_id) VALUES ('Dion','Davidovitch',39,'Odessa','Texas',79764,'cras pellentesque volutpat','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.',39);
+
+SELECT *
+FROM PetOwner;
