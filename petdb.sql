@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS petdb;
 USE petdb;
 
+
 CREATE TABLE IF NOT EXISTS PetServiceProviders
 (
     user_id INTEGER PRIMARY KEY,
@@ -89,8 +90,8 @@ CREATE TABLE IF NOT EXISTS PreferredPetSpecies
 CREATE TABLE IF NOT EXISTS Pet
 (
     color                  varchar(50) NOT NULL,
-    vaccination            varchar(50) NOT NULL,
-    sterilization          varchar(50) NOT NULL,
+    vaccination            boolean NOT NULL,
+    sterilization          boolean NOT NULL,
     borrowing_availability boolean     NOT NULL,
     age                    int         NOT NULL,
     species_id             int         NOT NULL,
@@ -115,7 +116,6 @@ CREATE TABLE IF NOT EXISTS PetBreed
 CREATE TABLE IF NOT EXISTS OwnerFriends
 (
     user_id        int            NOT NULL,
-    friend_num     INTEGER UNIQUE NOT NULL,
     friend_user_id int            NOT NULL,
     start_date     datetime DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_friend_userID
@@ -195,16 +195,7 @@ CREATE TABLE IF NOT EXISTS BorrowerPetPreferences
 );
 
 
-CREATE TABLE IF NOT EXISTS Habits
-(
-    habit_id    int PRIMARY KEY ,
-    borrower_id int UNIQUE,
-    description text,
-    CONSTRAINT fk_habbit_id
-        FOREIGN KEY (habit_id) REFERENCES BorrowerPetPreferences (habit_id),
-    CONSTRAINT fk_borrower_id
-        FOREIGN KEY (borrower_id) REFERENCES BorrowerPetPreferences (borrower_id)
-);
+
 
 
 CREATE TABLE IF NOT EXISTS BorrowerBorrow
@@ -720,66 +711,6 @@ INSERT INTO Borrower(first_name,last_name,availability,occupation,age,descriptio
 INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,review_id,borrower_id) VALUES ('Clifford','Osmund','luctus','tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu',2,'iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla','Houston','Texas',77060,59,59);
 INSERT INTO Borrower(first_name,last_name,availability,occupation,age,description,city,state,zip,review_id,borrower_id) VALUES ('Raff','Ponting','sapien','non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet',3,'dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis','Albuquerque','New Mexico',87115,60,60);
 
-INSERT INTO PetSpecies(species_id,species_name) VALUES (1,'Yellow-headed caracara');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (2,'Suricate');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (3,'Oribi');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (4,'Corella, long-billed');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (5,'Tern, royal');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (6,'Eagle, golden');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (7,'Crane, sarus');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (8,'Rat, arboral spiny');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (9,'Eagle, bateleur');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (10,'Southern lapwing');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (11,'Fox, savanna');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (12,'Long-crested hawk eagle');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (13,'European red squirrel');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (14,'Shrike, common boubou');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (15,'Tammar wallaby');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (16,'Coqui partridge');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (17,'American bighorn sheep');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (18,'Australian spiny anteater');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (19,'Jackal, asiatic');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (20,'Wallaby, tammar');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (21,'Wallaby, red-necked');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (22,'Stork, marabou');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (23,'Trumpeter swan');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (24,'Swan, trumpeter');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (25,'Snowy sheathbill');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (26,'Springbok');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (27,'Bear, american black');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (28,'Lemur, sportive');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (29,'Dragon, asian water');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (30,'Lemming, arctic');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (31,'Turkey, common');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (32,'Cobra, cape');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (33,'Thirteen-lined squirrel');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (34,'American beaver');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (35,'Finch, common melba');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (36,'Pronghorn');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (37,'Rat, arboral spiny');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (38,'Tortoise, desert');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (39,'Wolf spider');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (40,'Tarantula');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (41,'Black-capped capuchin');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (42,'Wallaby, red-necked');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (43,'Pigeon, wood');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (44,'Robin, white-throated');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (45,'Galapagos penguin');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (46,'Duiker, common');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (47,'Bandicoot, short-nosed');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (48,'South African hedgehog');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (49,'Quoll, spotted-tailed');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (50,'Eagle, bateleur');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (51,'Crane, sarus');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (52,'Owl, snowy');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (53,'Raven, cape');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (54,'Vulture, bengal');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (55,'Rufous-collared sparrow');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (56,'Currasow (unidentified)');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (57,'Bee-eater, nubian');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (58,'Fairy penguin');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (59,'White-tailed jackrabbit');
-INSERT INTO PetSpecies(species_id,species_name) VALUES (60,'Goliath heron');
 
 
 INSERT INTO BorrowerPetPreferences(species_id,type_id,habit_id,borrower_id) VALUES (1,1,1,58);
@@ -905,66 +836,69 @@ INSERT INTO BorrowerReview(review_text,pet_id,borrower_id) VALUES ('duis mattis 
 INSERT INTO BorrowerReview(review_text,pet_id,borrower_id) VALUES ('nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis',60,26);
 
 
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (58,48);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (23,44);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (33,5);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (4,26);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (54,13);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (57,28);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (27,32);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (9,16);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (52,21);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (31,43);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (27,50);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (50,38);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (13,12);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (22,25);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (46,40);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (9,26);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (48,3);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (12,58);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (20,49);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (28,41);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (34,23);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (1,59);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (2,30);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (31,42);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (3,57);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (54,5);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (24,23);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (39,16);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (12,44);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (47,4);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (56,60);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (5,52);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (28,8);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (54,9);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (12,26);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (8,2);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (59,34);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (1,7);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (2,42);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (57,14);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (59,22);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (29,56);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (60,9);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (39,12);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (32,50);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (48,53);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (7,37);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (27,58);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (53,49);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (36,29);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (41,15);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (26,50);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (27,15);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (18,6);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (46,31);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (14,49);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (16,41);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (43,41);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (18,28);
-# INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (1,50);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (58,48);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (23,44);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (33,5);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (4,26);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (54,13);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (57,28);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (27,32);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (9,16);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (52,21);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (31,43);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (27,50);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (50,38);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (13,12);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (22,25);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (46,40);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (9,26);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (48,3);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (12,58);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (20,49);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (28,41);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (34,23);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (1,59);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (2,30);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (31,42);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (3,57);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (54,5);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (24,23);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (39,16);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (12,44);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (47,4);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (56,60);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (5,52);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (28,8);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (54,9);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (12,26);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (8,2);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (59,34);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (1,7);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (2,42);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (57,14);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (59,22);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (29,56);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (60,9);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (39,12);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (32,50);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (48,53);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (7,37);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (27,58);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (53,49);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (36,29);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (41,15);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (26,50);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (27,15);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (18,6);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (46,31);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (14,49);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (16,41);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (43,41);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (18,28);
+INSERT INTO BorrowerBorrow(borrower_id,pet_id) VALUES (1,50);
+
+
+
 
 # PetServiceProviders
 INSERT INTO PetServiceProviders(user_id,city,state,zip) VALUES (1,'Saint Joseph','Missouri',64504);
