@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS PetServiceProviders
 (
     user_id INTEGER PRIMARY KEY,
     city    varchar(100),
-    state   varchar(2),
+    state   text,
     zip     INTEGER NOT NULL
 );
 
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS Experience
     psp_id        INTEGER NOT NULL,
     education     varchar(100),
     career        varchar(100),
-    qualification varchar(100),
+    qualification text,
     city          varchar(100),
     state         varchar(50),
     zip           INTEGER NOT NULL,
@@ -36,7 +36,6 @@ CREATE TABLE IF NOT EXISTS Experience
         FOREIGN KEY (psp_id) REFERENCES PetServiceProviders (user_id)
             ON UPDATE CASCADE ON DELETE restrict
 );
-
 CREATE TABLE IF NOT EXISTS ProviderReview
 (
     psp_id      INTEGER NOT NULL,
