@@ -92,8 +92,8 @@ CREATE TABLE IF NOT EXISTS PreferredPetSpecies
 CREATE TABLE IF NOT EXISTS Pet
 (
     color                  varchar(50) NOT NULL,
-    vaccination            varchar(50) NOT NULL,
-    sterilization          varchar(50) NOT NULL,
+    vaccination            boolean      NOT NULL,
+    sterilization          boolean      NOT NULL,
     borrowing_availability boolean     NOT NULL,
     age                    int         NOT NULL,
     species_id             int         NOT NULL,
@@ -600,6 +600,130 @@ INSERT INTO OwnerPets(user_id,pet_num,pet_id) VALUES (13,57,33);
 INSERT INTO OwnerPets(user_id,pet_num,pet_id) VALUES (50,58,21);
 INSERT INTO OwnerPets(user_id,pet_num,pet_id) VALUES (35,59,44);
 INSERT INTO OwnerPets(user_id,pet_num,pet_id) VALUES (22,60,1);
+
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Violet','1','1','0',48,49,'diam in magna bibendum imperdiet nullam orci pede venenatis non sodales',1);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Turquoise','0','0','1',54,39,'lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat',2);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Green','1','0','1',27,26,'id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo',3);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Fuscia','1','1','0',85,47,'tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla',4);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Yellow','0','0','0',44,15,'accumsan tellus nisi eu orci mauris lacinia sapien quis libero',5);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Crimson','1','0','1',36,31,'justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam',6);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Teal','0','1','1',84,21,'at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis',7);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Yellow','0','1','0',62,18,'sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla',8);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Puce','1','1','1',22,20,'augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi',9);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Yellow','1','0','0',80,53,'nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet',10);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Puce','1','0','0',43,58,'ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus',11);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Indigo','1','1','0',67,38,'natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient',12);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Crimson','0','1','0',72,46,'curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue',13);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Violet','1','0','1',89,33,'pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti',14);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Purple','0','0','0',61,37,'eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo',15);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Orange','0','1','0',24,22,'dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl',16);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Blue','1','0','1',73,52,'eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio',17);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Aquamarine','0','1','1',51,51,'tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem',18);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Puce','1','1','0',51,54,'pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla',19);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Violet','0','1','0',49,35,'lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis',20);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Violet','0','0','1',70,13,'auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede',21);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Pink','1','0','1',74,12,'amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam',22);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Purple','1','0','1',68,19,'semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero',23);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Purple','1','1','0',77,4,'vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque',24);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Teal','0','0','0',39,14,'justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer',25);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Teal','0','0','1',75,57,'in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in',26);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Blue','1','0','1',82,8,'aliquet maecenas leo odio condimentum id luctus nec molestie sed',27);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Purple','0','0','0',16,41,'eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in',28);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Yellow','1','0','0',40,59,'imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi',29);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Teal','1','1','1',24,50,'dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis',30);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Orange','1','1','1',83,6,'posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis',31);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Maroon','1','0','0',71,16,'etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate',32);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Fuscia','1','0','1',87,55,'pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet',33);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Orange','1','0','0',40,34,'erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat',34);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Crimson','0','1','0',72,42,'vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat',35);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Aquamarine','0','1','0',84,27,'platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in',36);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Fuscia','1','0','0',66,32,'praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent',37);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Crimson','1','1','1',47,28,'tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit',38);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Maroon','0','1','1',18,24,'eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a',39);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Purple','0','1','1',88,43,'in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus',40);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Goldenrod','1','1','1',80,1,'sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu',41);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Crimson','0','0','1',81,30,'turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non',42);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Teal','1','1','1',67,29,'vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque',43);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Teal','1','0','1',64,60,'eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui',44);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Yellow','0','1','1',23,7,'nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac',45);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Fuscia','1','0','0',59,17,'parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut',46);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Pink','0','1','1',85,44,'nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi',47);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Aquamarine','1','1','0',51,56,'maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque',48);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Orange','1','1','1',18,9,'id nulla ultrices aliquet maecenas leo odio condimentum id luctus',49);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Blue','0','0','0',81,11,'at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum',50);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Puce','0','1','1',45,40,'eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam',51);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Pink','1','1','1',15,5,'elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus',52);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Orange','1','0','0',56,23,'iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget',53);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Aquamarine','0','0','0',35,48,'ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam',54);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Blue','1','0','0',44,25,'in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices',55);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Green','1','1','0',53,10,'tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac',56);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Yellow','0','1','1',44,45,'cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere',57);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Purple','1','1','0',55,2,'blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac',58);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Maroon','1','1','0',81,3,'in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan',59);
+INSERT INTO Pet(color,vaccination,sterilization,borrowing_availability,age,species_id,personality,pet_id) VALUES ('Yellow','0','1','1',86,36,'interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat',60);
+
+
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (33,1,'tempus');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (6,2,'ultricies eu nibh');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (24,3,'ut erat id');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (49,4,'nulla nunc');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (60,5,'lacus purus aliquet');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (21,6,'lobortis est phasellus');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (56,7,'leo');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (48,8,'lorem ipsum dolor');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (57,9,'ut mauris eget');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (15,10,'tellus nulla ut');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (16,11,'sit amet');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (30,12,'fusce lacus purus');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (55,13,'convallis nulla neque');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (1,14,'volutpat erat');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (58,15,'sagittis nam');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (9,16,'nulla');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (18,17,'ac');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (51,18,'tristique');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (37,19,'aliquet pulvinar');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (20,20,'sapien');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (53,21,'cum sociis');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (52,22,'ultrices posuere');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (41,23,'leo pellentesque');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (26,24,'nunc');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (14,25,'eget tempus');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (17,26,'ligula sit amet');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (11,27,'duis consequat dui');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (8,28,'venenatis turpis enim');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (31,29,'dapibus nulla suscipit');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (4,30,'id mauris');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (43,31,'neque');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (25,32,'nulla nisl nunc');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (35,33,'velit');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (45,34,'sit amet nulla');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (12,35,'massa quis augue');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (29,36,'dui');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (34,37,'pede morbi');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (40,38,'turpis');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (13,39,'donec');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (2,40,'sapien cursus');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (5,41,'non mauris morbi');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (50,42,'curae mauris');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (42,43,'pede ac diam');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (47,44,'accumsan felis');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (22,45,'amet turpis elementum');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (38,46,'in congue etiam');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (39,47,'quis lectus suspendisse');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (59,48,'ridiculus mus vivamus');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (28,49,'at');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (10,50,'sapien cursus');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (46,51,'aliquet maecenas leo');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (32,52,'in quam');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (7,53,'iaculis diam erat');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (19,54,'proin');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (3,55,'sit');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (23,56,'fringilla rhoncus');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (44,57,'amet justo morbi');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (54,58,'ligula');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (27,59,'ante vel');
+INSERT INTO PetBreed(species_id,breed_id,breed_name) VALUES (36,60,'ultricies');
+
 
 SELECT *
 FROM PetOwner;
