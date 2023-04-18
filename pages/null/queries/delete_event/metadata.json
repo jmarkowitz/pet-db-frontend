@@ -2,12 +2,12 @@
   "pluginType": "API",
   "pluginId": "restapi-plugin",
   "unpublishedAction": {
-    "name": "put_event",
+    "name": "delete_event",
     "datasource": {
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "web:4000/o/events/update"
+        "url": "web:4000/o/events/delete"
       },
       "invalids": [],
       "messages": [],
@@ -16,7 +16,6 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "PetOwnerCreateEvents",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -29,9 +28,9 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "{{Form3.data}}",
+      "body": "{{Form2.data}}",
       "bodyFormData": [],
-      "httpMethod": "PUT",
+      "httpMethod": "DELETE",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -52,14 +51,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "Form3.data"
+      "Form2.data"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "PetOwnerCreateEvents_put_event",
+  "id": "null_delete_event",
   "deleted": false,
-  "gitSyncId": "6439b8073361316389223586_643e06e49272f437f63b7a9a"
+  "gitSyncId": "6439b8073361316389223586_643d7efb9272f437f63b7a8e"
 }
