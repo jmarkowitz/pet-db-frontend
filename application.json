@@ -3,10 +3,6 @@
     {
       "id": "PetOwnerCreateEvents",
       "isDefault": true
-    },
-    {
-      "id": "PetOwnerFindPets",
-      "isDefault": false
     }
   ],
   "viewMode": false,
