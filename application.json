@@ -1,10 +1,6 @@
 {
   "pages": [
     {
-      "id": "1",
-      "isDefault": true
-    },
-    {
       "id": "PetPreference",
       "isDefault": false
     },
