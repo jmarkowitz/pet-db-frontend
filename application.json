@@ -7,6 +7,14 @@
     {
       "id": "PetOwnerFindPets",
       "isDefault": false
+    },
+    {
+      "id": "PetPreference",
+      "isDefault": false
+    },
+    {
+      "id": "BorrowerReview",
+      "isDefault": false
     }
   ],
   "viewMode": false,
