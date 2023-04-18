@@ -5,10 +5,6 @@
       "isDefault": true
     },
     {
-      "id": "PetOwnerFindPets",
-      "isDefault": false
-    },
-    {
       "id": "PetPreference",
       "isDefault": false
     },
