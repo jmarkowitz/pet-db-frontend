@@ -2,12 +2,12 @@
   "pluginType": "API",
   "pluginId": "restapi-plugin",
   "unpublishedAction": {
-    "name": "post_events",
+    "name": "post_borrower_id",
     "datasource": {
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "web:4000/o/events/new"
+        "url": "web:4000/b/borrower_id"
       },
       "invalids": [],
       "messages": [],
@@ -16,7 +16,7 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "PetOwnerCreateEvents",
+    "pageId": "PetPreference",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -29,7 +29,7 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "{{Form1.data}}",
+      "body": "{{create_preference.data}}",
       "bodyFormData": [],
       "httpMethod": "POST",
       "selfReferencingDataPaths": [],
@@ -52,14 +52,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "Form1.data"
+      "create_preference.data"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "PetOwnerCreateEvents_post_events",
+  "id": "PetPreference_post_borrower_id",
   "deleted": false,
-  "gitSyncId": "6439b8073361316389223586_643caef69272f437f63b7a73"
+  "gitSyncId": "6439b7f76dcfeb5c47c88b13_643c5a016dcfeb5c47c88b33"
 }

@@ -1,21 +1,12 @@
 {
   "pages": [
     {
-
-      "id": "PetOwnerCreateEvents",
-      "isDefault": true
-
-      "id": "1",
-      "isDefault": true
-    },
-    {
       "id": "PetPreference",
       "isDefault": false
     },
     {
       "id": "BorrowerReview",
       "isDefault": false
-
     }
   ],
   "viewMode": false,
