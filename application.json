@@ -1,11 +1,19 @@
 {
   "pages": [
     {
-      "id": "Page1",
+      "id": "1",
       "isDefault": true
     },
     {
       "id": "PetOwnerFindPets",
+      "isDefault": false
+    },
+    {
+      "id": "PetPreference",
+      "isDefault": false
+    },
+    {
+      "id": "BorrowerReview",
       "isDefault": false
     }
   ],
