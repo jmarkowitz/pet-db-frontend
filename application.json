@@ -11,6 +11,10 @@
     {
       "id": "PetOwnerCreateEvents",
       "isDefault": false
+    },
+    {
+      "id": "PetOwnerSearch",
+      "isDefault": false
     }
   ],
   "viewMode": false,

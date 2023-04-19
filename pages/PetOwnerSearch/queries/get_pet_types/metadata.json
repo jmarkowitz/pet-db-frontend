@@ -2,12 +2,12 @@
   "pluginType": "API",
   "pluginId": "restapi-plugin",
   "unpublishedAction": {
-    "name": "getPet",
+    "name": "get_pet_types",
     "datasource": {
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "web:4000/b/pet"
+        "url": "web:4000/o/petTypes"
       },
       "invalids": [],
       "messages": [],
@@ -16,7 +16,7 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "BorrowerReview",
+    "pageId": "PetOwnerSearch",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -47,7 +47,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": "BorrowerReview_getPet",
+  "id": "PetOwnerSearch_get_pet_types",
   "deleted": false,
-  "gitSyncId": "6439b7f76dcfeb5c47c88b13_643c62176dcfeb5c47c88b40"
+  "gitSyncId": "6439b0dce0fdc929ca302879_643f1c09ea57ef1a9bfeb594"
 }

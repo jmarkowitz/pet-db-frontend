@@ -232,7 +232,7 @@
                       "type": "SELECT_WIDGET",
                       "serverSideFiltering": false,
                       "hideCard": false,
-                      "defaultOptionValue": "GREEN",
+                      "defaultOptionValue": "",
                       "animateLoading": true,
                       "parentColumnSpace": 10.228271484375,
                       "dynamicTriggerPathList": [],
