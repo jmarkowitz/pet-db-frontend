@@ -1,11 +1,9 @@
-![](https://raw.githubusercontent.com/appsmithorg/appsmith/release/static/appsmith_logo_primary.png)
+# Pet Platform
 
-This app is built using Appsmith. Turn any datasource into an internal app in minutes. Appsmith lets you drag-and-drop components to build dashboards, write logic with JavaScript objects and connect to any API, database or GraphQL source.
+## Functionality
+In our website, you can either be a pet borrower or pet owner. As a pet borrower, you could update your preferences for pets so that you get better match results, and after your interactions with pets, you could leave reviews for them. As a pet owner, you could search for desirable pets, and add other users as friend.Pet owners can also browse current events, add new events and update/delete events. 
 
-![](https://raw.githubusercontent.com/appsmithorg/appsmith/release/static/images/integrations.png)
-
-### [Github](https://github.com/appsmithorg/appsmith) • [Docs](https://docs.appsmith.com/?utm_source=github&utm_medium=social&utm_content=appsmith_docs&utm_campaign=null&utm_term=appsmith_docs) • [Community](https://community.appsmith.com/) • [Tutorials](https://github.com/appsmithorg/appsmith/tree/update/readme#tutorials) • [Youtube](https://www.youtube.com/appsmith) • [Discord](https://discord.gg/rBTTVJp)
-
-##### You can visit the application using the below link
+## How to setup the pet platform
+You can visit the application using the below link
 
 ###### [![](https://assets.appsmith.com/git-sync/Buttons.svg) ](http://localhost:8080/applications/642d91c2f819a232f36a40f5/pages/642d91c2f819a232f36a40f8) [![](https://assets.appsmith.com/git-sync/Buttons2.svg)](http://localhost:8080/applications/642d91c2f819a232f36a40f5/pages/642d91c2f819a232f36a40f8/edit)
