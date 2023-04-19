@@ -123,7 +123,7 @@
                       "resetFormOnClick": true,
                       "boxShadow": "none",
                       "widgetName": "Button1",
-                      "onClick": "{{post_borrower_id.run()}}",
+                      "onClick": "{{post_borrower_id.run(() => showAlert('Pet Preference Added!','success'), () => showAlert('Could Not Add Pet Preference','error'))}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "displayName": "Button",
                       "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
